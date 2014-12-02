@@ -28,3 +28,10 @@ or add it to your Dockerfile:
 FROM ichigotake/docker-android-dev
 ```
 
+### License
+
+This repository forked from [vmlinz/docker-android-dev](https://github.com/vmlinz/docker-android-dev).
+
+[MIT LICENSE](LICENSE)
+
+
