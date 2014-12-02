@@ -8,7 +8,7 @@
 # Start with Ubuntu 14.04 LTS.
 FROM phusion/baseimage
 
-MAINTAINER Zaicheng Qi <vmlinz@gmail.com>
+MAINTAINER ichigotake <ichigotake.san@gmail.com>
 
 # Never ask for confirmations
 ENV DEBIAN_FRONTEND noninteractive
