@@ -1,13 +1,18 @@
-### Android development environment for ubuntu 14.04 LTS
+## Android development environment for ubuntu 14.04 LTS
+
+### Work in progress
+
+Now deploying...
+
+### Encironment
 
 * Oracle Java JDK 7
 * Android SDK r23.0.2
-* Android NDK r9d
 * Gradle 2.0
 
-#### Install
+### Install
 
-You can either pull from `vmlinz/docker-android-dev`:
+You can either pull from `ichigotake/docker-android-dev`:
 
 ```
 docker pull ichigotake/docker-android-dev
