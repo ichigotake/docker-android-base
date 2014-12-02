@@ -8,7 +8,6 @@ Now deploying...
 
 * Oracle Java JDK 7
 * Android SDK r23.0.2
-* Gradle 2.0
 
 ### Install
 

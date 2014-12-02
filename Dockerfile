@@ -1,7 +1,6 @@
 # Android development environment based on Ubuntu 14.04 LTS.
 # version 0.0.1
 
-# - https://services.gradle.org/distributions/gradle-2.0-bin.zip
 # - http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
 
 # Start with Ubuntu 14.04 LTS.
@@ -34,17 +33,9 @@ RUN apt-get -y install oracle-java7-installer
 
 RUN curl -3L https://github.com/vmlinz/android-sdk-installer/raw/master/android-sdk-installer | bash /dev/stdin --install="tools,platform-tools,build-tools-21.1.1,android-21,sys-img-armeabi-v7a-android-21,extra-android-support,extra-android-m2repository,extra-google-m2repository" --dir="/opt" --accept="android-sdk-license-5be876d5|android-sdk-preview-license-52d11cd2"
 
-# Install Gradle
-RUN wget https://services.gradle.org/distributions/gradle-2.0-bin.zip
-RUN unzip gradle-2.0-bin.zip
-RUN mv gradle-2.0 /opt/
-RUN rm gradle-2.0-bin.zip
-
 # Environment variables
 ENV ANDROID_SDK_HOME /opt/android-sdk-linux
-ENV ANDROID_NDK_HOME /opt/android-ndk-r9d
 ENV ANDROID_HOME $ANDROID_SDK_HOME
-ENV GRADLE_HOME /opt/gradle-2.0
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
 ENV PATH $PATH:$GRADLE_HOME/bin
