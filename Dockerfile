@@ -28,8 +28,19 @@ RUN add-apt-repository ppa:webupd8team/java
 # Update apt
 RUN apt-get update
 
+# Install oracle-jdk8 for retrolambda
+RUN apt-get -y install oracle-java8-installer
+ENV JAVA8_HOME /usr/lib/jvm/java-8-oracle
+
 # Install oracle-jdk7
 RUN apt-get -y install oracle-java7-installer
+ENV JAVA7_HOME /usr/lib/jvm/java-7-oracle
+
+# Install oracle-jdk6
+RUN apt-get -y install oracle-java6-installer
+ENV JAVA6_HOME /usr/lib/jvm/java-7-oracle
+
+ENV JAVA_HOME $JAVA7_HOME
 
 RUN curl -L https://raw.githubusercontent.com/embarkmobile/android-sdk-installer/master/android-sdk-installer | bash /dev/stdin --install="tools,platform-tools,build-tools-21.1.1,android-21,extra-android-support,extra-android-m2repository,extra-google-m2repository" --dir="/opt" --accept="android-sdk-license-5be876d5|android-sdk-preview-license-52d11cd2"
 
@@ -39,9 +50,6 @@ ENV ANDROID_HOME $ANDROID_SDK_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
 ENV PATH $PATH:$GRADLE_HOME/bin
-
-# Export JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 
 # Clean up
 RUN apt-get clean

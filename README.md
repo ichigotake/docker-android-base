@@ -6,7 +6,9 @@ Now deploying...
 
 ### Encironment
 
-* Oracle Java JDK 7
+* Oracle Java JDK 6 as set $JAVA6\_HOME
+* Oracle Java JDK 7 as set $JAVA7\_HOME by default $JAVA\_HOME
+* Oracle Java JDK 8 as set $JAVA8\_HOME for retrolambda
 * Android SDK r23.0.2
 
 ### Install
