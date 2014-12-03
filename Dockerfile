@@ -38,7 +38,7 @@ ENV JAVA7_HOME /usr/lib/jvm/java-7-oracle
 
 # Install oracle-jdk6
 RUN apt-get -y install oracle-java6-installer
-ENV JAVA6_HOME /usr/lib/jvm/java-7-oracle
+ENV JAVA6_HOME /usr/lib/jvm/java-6-oracle
 
 ENV JAVA_HOME $JAVA7_HOME
 
