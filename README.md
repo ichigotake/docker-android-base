@@ -4,7 +4,7 @@
 
 Now deploying...
 
-### Encironment
+### Environment
 
 * Oracle Java JDK 6 as set $JAVA6\_HOME
 * Oracle Java JDK 7 as set $JAVA7\_HOME by default $JAVA\_HOME
