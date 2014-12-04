@@ -4,29 +4,7 @@
 
 Now deploying...
 
-### Synopsis
-
-[Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
-
-```
-FROM ichigotake/docker-android-dev
-
-MAINTAINER ichigotake <ichigotake.san@gmail.com>
-
-ENV APP_ROOT /opt/Application
-
-# Download repository
-RUN apt-get install git
-RUN git clone https://github.com/ichigotake/Pyazing $APP_ROOT
-
-# Resolve dependencies
-# with sdk-manager-plugin (https://github.com/JakeWharton/sdk-manager-plugin) in Pyazing project.
-RUN cd $APP_ROOT && ./gradlew
-
-...
-```
-
-### Environment
+### Encironment
 
 * Oracle Java JDK 6 as set $JAVA6\_HOME
 * Oracle Java JDK 7 as set $JAVA7\_HOME by default $JAVA\_HOME
