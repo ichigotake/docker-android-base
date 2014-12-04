@@ -3,7 +3,8 @@
 ### Work in progress
 
 Now deploying...
-o### Synopsis
+
+### Synopsis
 
 [Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
 
@@ -19,7 +20,7 @@ RUN apt-get install git
 RUN git clone https://github.com/ichigotake/Pyazing $APP_ROOT
 
 # Resolve dependencies
-# with sdk-manager-plugin (https://github.com/JakeWharton/sdk-manager-plugin) in Pyazing project.
+# with JakeWhaton/sdk-manager-plugin in Pyazing project
 RUN cd $APP_ROOT && ./gradlew
 
 ...
