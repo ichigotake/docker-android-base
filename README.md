@@ -37,6 +37,8 @@ I reccomend use [sdk-manager-plugin](https://github.com/JakeWharton/sdk-manager-
 * Android SDK
     * tools r23.0.2
     * platform-tools
+    * build-tools r21.1.1
+    * android-21
     * extra-android-support
     * extra-android-m2repository
     * extra-google-m2repository
