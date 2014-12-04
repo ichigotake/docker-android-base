@@ -3,8 +3,33 @@
 ### Work in progress
 
 Now deploying...
+o### Synopsis
 
-### Encironment
+[Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
+
+```
+FROM ichigotake/docker-android-dev
+
+MAINTAINER ichigotake <ichigotake.san@gmail.com>
+
+ENV APP_ROOT /opt/Application
+
+# Download repository
+RUN apt-get install git
+RUN git clone https://github.com/ichigotake/Pyazing $APP_ROOT
+
+# Resolve dependencies
+# with sdk-manager-plugin (https://github.com/JakeWharton/sdk-manager-plugin) in Pyazing project.
+RUN cd $APP_ROOT && ./gradlew
+
+...
+```
+
+I reccomend use [sdk-manager-plugin](https://github.com/JakeWharton/sdk-manager-plugin) on your project.
+
+(or install the sdk yourself with [android-sdk-installer](https://github.com/embarkmobile/android-sdk-installer/))
+
+### Environment
 
 * Oracle Java JDK 6 as set $JAVA6\_HOME
 * Oracle Java JDK 7 as set $JAVA7\_HOME by default $JAVA\_HOME
@@ -15,12 +40,6 @@ Now deploying...
     * extra-android-support
     * extra-android-m2repository
     * extra-google-m2repository
-
-This image not included `build-tools`, `android-sdk`, `emulator` and other items, because to diet  base image for a small size binary.
-
-I reccomend use [sdk-manager-plugin](https://github.com/JakeWharton/sdk-manager-plugin) on your project.
-
-(or install the sdk yourself with [android-sdk-installer](https://github.com/embarkmobile/android-sdk-installer/))
 
 ### Install
 
