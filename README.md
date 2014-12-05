@@ -1,5 +1,7 @@
 ## docker-android-base
 
+Docker base image for Android develop environment.
+
 ### Synopsis
 
 [Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
