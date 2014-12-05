@@ -59,6 +59,10 @@ or add it to your Dockerfile:
 ```
 FROM ichigotake/docker-android-base
 ```
+## See also
+
+- [ichigotake/docker-android-base Repository | Docker Hub Registry - Repositories of Docker Images](https://registry.hub.docker.com/u/ichigotake/docker-android-base/)
+- [ichigotake/docker-android-base - Github](https://github.com/ichigotake/docker-android-base)
 
 ### License
 
