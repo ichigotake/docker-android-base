@@ -37,7 +37,7 @@ RUN apt-get -y install oracle-java7-installer
 # Install oracle-jdk6
 RUN apt-get -y install oracle-java6-installer
 
-RUN curl -L https://raw.githubusercontent.com/embarkmobile/android-sdk-installer/master/android-sdk-installer | bash /dev/stdin --install="tools,platform-tools,build-tools-21.1.1,android-21,extra-android-support,extra-android-m2repository,extra-google-m2repository" --dir="/opt" --accept="android-sdk-license-5be876d5|android-sdk-preview-license-52d11cd2"
+RUN curl -L https://raw.githubusercontent.com/embarkmobile/android-sdk-installer/master/android-sdk-installer | bash /dev/stdin --install="tools,platform-tools,build-tools-21.1.1,android-21,android-20,extra-android-support,extra-android-m2repository,extra-google-m2repository" --dir="/opt" --accept="android-sdk-license-5be876d5|android-sdk-preview-license-52d11cd2"
 
 # Environment variables
 ENV ANDROID_SDK_HOME /opt/android-sdk-linux
