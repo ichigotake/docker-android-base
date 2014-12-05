@@ -1,15 +1,11 @@
-## Android development environment for ubuntu 14.04 LTS
-
-### Work in progress
-
-Now deploying...
+## docker-android-base
 
 ### Synopsis
 
 [Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
 
 ```
-FROM ichigotake/docker-android-dev
+FROM ichigotake/docker-android-base
 
 MAINTAINER ichigotake <ichigotake.san@gmail.com>
 
@@ -46,20 +42,20 @@ I reccomend use [sdk-manager-plugin](https://github.com/JakeWharton/sdk-manager-
 
 ### Install
 
-You can either pull from `ichigotake/docker-android-dev`:
+You can either pull from `ichigotake/docker-android-base`:
 
 ```
-docker pull ichigotake/docker-android-dev
+docker pull ichigotake/docker-android-base
 ```
 
 ```
-docker run -i -t ichigotake/docker-android-dev /bin/bash
+docker run -i -t ichigotake/docker-android-base /bin/bash
 ```
 
 or add it to your Dockerfile:
 
 ```
-FROM ichigotake/docker-android-dev
+FROM ichigotake/docker-android-base
 ```
 
 ### License
