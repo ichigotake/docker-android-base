@@ -28,17 +28,18 @@ apt-get -y install \
 RUN apt-get clean
 
 # Environment variables
+ENV JAVA6_HOME /usr/lib/jvm/java-6-oracle
+ENV JAVA7_HOME /usr/lib/jvm/java-7-oracle
+ENV JAVA8_HOME /usr/lib/jvm/java-8-oracle
+ENV JAVA_HOME $JAVA8_HOME
 ENV ANDROID_SDK_URL http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
 ENV ANDROID_SDK_COMPONENTS tools,platform-tools,build-tools-24.1.2,android-22,android-20,extra-android-support,extra-android-m2repository,extra-google-m2repository
 ENV ANDROID_SDK_HOME /usr/local/android-sdk-linux
 ENV ANDROID_HOME $ANDROID_SDK_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
-ENV JAVA6_HOME /usr/lib/jvm/java-6-oracle
-ENV JAVA7_HOME /usr/lib/jvm/java-7-oracle
-ENV JAVA8_HOME /usr/lib/jvm/java-8-oracle
-ENV JAVA_HOME $JAVA7_HOME
 
-RUN curl -L "${ANDROID_SDK_URL}" | tar --no-same-owner -xz /usr/local
+RUN ln -s $JAVA_HOME/bin/java /usr/bin
+RUN curl -L "$ANDROID_SDK_URL" | tar -xz -C /usr/local
 RUN echo y | android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}"
 
