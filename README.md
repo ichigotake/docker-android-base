@@ -4,8 +4,6 @@ Docker base image for Android develop environment.
 
 ### Synopsis
 
-[Example use case](https://github.com/ichigotake/Pyazing/blob/v1.8/Dockerfile)
-
 ```
 FROM ichigotake/docker-android-base
 
@@ -15,10 +13,10 @@ ENV APP_ROOT /opt/Application
 
 # Download repository
 RUN apt-get install git
-RUN git clone https://github.com/ichigotake/Pyazing $APP_ROOT
+RUN git clone https://github.com/ichigotake/MyProject $APP_ROOT
 
 # Resolve dependencies
-# with JakeWhaton/sdk-manager-plugin in Pyazing project
+# with JakeWhaton/sdk-manager-plugin in this project
 RUN cd $APP_ROOT && ./gradlew
 
 ...
@@ -26,19 +24,17 @@ RUN cd $APP_ROOT && ./gradlew
 
 I reccomend use [sdk-manager-plugin](https://github.com/JakeWharton/sdk-manager-plugin) on your project.
 
-(or install the sdk yourself with [android-sdk-installer](https://github.com/embarkmobile/android-sdk-installer/))
+(or install the components yourself. e.g. [android-sdk-installer](https://github.com/embarkmobile/android-sdk-installer/))
 
 ### Environment
 
-* Oracle Java JDK 6 as set $JAVA6\_HOME
-* Oracle Java JDK 7 as set $JAVA7\_HOME by default $JAVA\_HOME
-* Oracle Java JDK 8 as set $JAVA8\_HOME for retrolambda
+* Oracle Java JDK 8 as set $JAVA8\_HOME as default $JAVA\_HOME
 * Android SDK
-    * tools r23.0.2
+    * tools r24.0.1
     * platform-tools
-    * build-tools r21.1.1
+    * build-tools r22.1.1
     * android-20
-    * android-21
+    * android-22
     * extra-android-support
     * extra-android-m2repository
     * extra-google-m2repository
