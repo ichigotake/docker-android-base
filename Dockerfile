@@ -1,17 +1,12 @@
-# Android development environment based on Ubuntu 14.04 LTS.
-# r24.1.2
-
 FROM phusion/baseimage
 
 MAINTAINER ichigotake <ichigotake.san@gmail.com>
 
-# Never ask for confirmations
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
 RUN add-apt-repository ppa:webupd8team/java
 
-# First, install add-apt-repository and bzip2
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get -y install \
