@@ -20,7 +20,8 @@ RUN dpkg --add-architecture i386 && \
         lib32stdc++6 lib32z1 \
         build-essential
 
-apt-get -y install \
+#    oracle-java8-set-default \
+RUN apt-get -y install \
     oracle-java8-installer \
     oracle-java7-installer \
     oracle-java6-installer
@@ -39,7 +40,6 @@ ENV ANDROID_HOME $ANDROID_SDK_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
 
-RUN ln -s $JAVA_HOME/bin/java /usr/bin
 RUN curl -L "$ANDROID_SDK_URL" | tar -xz -C /usr/local
 RUN echo y | android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}"
 
