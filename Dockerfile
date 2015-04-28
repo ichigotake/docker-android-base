@@ -30,6 +30,6 @@ ENV ANDROID_HOME $ANDROID_SDK_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
 
-RUN curl -L "$ANDROID_SDK_URL" | tar -xz -C /usr/local
+RUN curl -L "$ANDROID_SDK_URL" | tar --no-same-owner -xz -C /usr/local
 RUN echo y | android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}"
 
