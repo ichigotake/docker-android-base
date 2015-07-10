@@ -1,23 +1,20 @@
-FROM phusion/baseimage
+FROM ubuntu:14.04
 
 MAINTAINER ichigotake <ichigotake.san@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
-RUN add-apt-repository ppa:webupd8team/java
 
-RUN dpkg --add-architecture i386 && \
-    apt-get update && \
+RUN apt-get update && \
+    apt-get install -y software-properties-common &&\
+    dpkg --add-architecture i386 && add-apt-repository ppa:webupd8team/java && apt-get update &&\
+    echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections &&\
+    echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections &&\
     apt-get -y install \
-        software-properties-common python-software-properties \
+        python-software-properties \
         bzip2 unzip openssh-client git \
-        lib32stdc++6 lib32z1 \
-        build-essential
-
-RUN apt-get -y install oracle-java8-installer
-
-RUN apt-get clean
+        lib32stdc++6 lib32z1 curl\
+        build-essential oracle-java8-installer &&\
+    apt-get clean
 
 # Environment variables
 ENV JAVA8_HOME /usr/lib/jvm/java-8-oracle
