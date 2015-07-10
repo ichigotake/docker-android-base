@@ -19,7 +19,7 @@ RUN apt-get update && \
 # Environment variables
 ENV JAVA8_HOME /usr/lib/jvm/java-8-oracle
 ENV JAVA_HOME $JAVA8_HOME
-ENV ANDROID_SDK_REVISION 24.3.2
+ENV ANDROID_SDK_REVISION 24.3.3
 ENV ANDROID_SDK_URL http://dl.google.com/android/android-sdk_r${ANDROID_SDK_REVISION}-linux.tgz
 ENV ANDROID_SDK_COMPONENTS tools,platform-tools,build-tools-22.0.1,build-tools-20.0.0,android-22,android-20,extra-android-support,extra-android-m2repository,extra-google-m2repository
 ENV ANDROID_SDK_HOME /usr/local/android-sdk-linux
